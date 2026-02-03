@@ -11,64 +11,131 @@
     <title>Sign in & Sign up Form</title>
   </head>
   <body>
+    <button class="theme-toggle" type="button" aria-pressed="false">
+      Dark mode
+    </button>
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
           <form action="#" class="sign-in-form">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <i class="fas fa-user" aria-hidden="true"></i>
+              <label class="sr-only" for="sign-in-username">Username</label>
+              <input
+                type="text"
+                id="sign-in-username"
+                name="username"
+                placeholder="Username"
+                autocomplete="username"
+                required
+              />
             </div>
             <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <i class="fas fa-lock" aria-hidden="true"></i>
+              <label class="sr-only" for="sign-in-password">Password</label>
+              <input
+                type="password"
+                id="sign-in-password"
+                name="password"
+                placeholder="Password"
+                autocomplete="current-password"
+                required
+              />
+              <button
+                class="toggle-password"
+                type="button"
+                data-toggle-password="#sign-in-password"
+                aria-pressed="false"
+              >
+                Show
+              </button>
+            </div>
+            <div class="form-meta">
+              <label class="checkbox-field">
+                <input type="checkbox" name="remember" />
+                Remember me
+              </label>
+              <a class="text-link" href="#">Forgot password?</a>
             </div>
             <input type="submit" value="Login" class="btn solid" />
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-facebook-f" aria-hidden="true"></i>
               </a>
               <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
+                <i class="fab fa-twitter" aria-hidden="true"></i>
               </a>
               <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
+                <i class="fab fa-google" aria-hidden="true"></i>
               </a>
               <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
               </a>
             </div>
           </form>
           <form action="#" class="sign-up-form">
             <h2 class="title">Sign up</h2>
             <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <i class="fas fa-user" aria-hidden="true"></i>
+              <label class="sr-only" for="sign-up-username">Username</label>
+              <input
+                type="text"
+                id="sign-up-username"
+                name="username"
+                placeholder="Username"
+                autocomplete="username"
+                required
+              />
             </div>
             <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <label class="sr-only" for="sign-up-email">Email</label>
+              <input
+                type="email"
+                id="sign-up-email"
+                name="email"
+                placeholder="Email"
+                autocomplete="email"
+                required
+              />
             </div>
             <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <i class="fas fa-lock" aria-hidden="true"></i>
+              <label class="sr-only" for="sign-up-password">Password</label>
+              <input
+                type="password"
+                id="sign-up-password"
+                name="password"
+                placeholder="Password"
+                autocomplete="new-password"
+                required
+              />
+              <button
+                class="toggle-password"
+                type="button"
+                data-toggle-password="#sign-up-password"
+                aria-pressed="false"
+              >
+                Show
+              </button>
             </div>
+            <p class="helper-text">Use at least 8 characters with a mix of letters and numbers.</p>
             <input type="submit" class="btn" value="Sign up" />
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-facebook-f" aria-hidden="true"></i>
               </a>
               <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
+                <i class="fab fa-twitter" aria-hidden="true"></i>
               </a>
               <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
+                <i class="fab fa-google" aria-hidden="true"></i>
               </a>
               <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
               </a>
             </div>
           </form>
