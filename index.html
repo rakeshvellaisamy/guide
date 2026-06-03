@@ -1,108 +1,1412 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/64d58efce2.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="style.css" />
-    <title>Sign in & Sign up Form</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="forms-container">
-        <div class="signin-signup">
-          <form action="#" class="sign-in-form">
-            <h2 class="title">Sign in</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
-            </div>
-            <input type="submit" value="Login" class="btn solid" />
-            <p class="social-text">Or Sign in with social platforms</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
-          </form>
-          <form action="#" class="sign-up-form">
-            <h2 class="title">Sign up</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
-            </div>
-            <input type="submit" class="btn" value="Sign up" />
-            <p class="social-text">Or Sign up with social platforms</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
-          </form>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oil Business Startup Guide | எண்ணெய் தொழில் வழிகாட்டி</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #D4A017;
+    --gold-light: #F5D06A;
+    --gold-pale: #FEF9EC;
+    --dark: #1A1205;
+    --brown: #5C3D11;
+    --green: #2D6A4F;
+    --green-light: #E8F5EE;
+    --orange: #C85A11;
+    --orange-light: #FDF0E8;
+    --blue: #1B4F72;
+    --blue-light: #EAF2FB;
+    --red: #A93226;
+    --red-light: #FDEDEC;
+    --gray: #6B7280;
+    --light: #FAFAF7;
+    --white: #FFFFFF;
+    --shadow: 0 4px 24px rgba(212,160,23,0.12);
+    --radius: 16px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.75;
+    font-size: 16px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #1A1205 0%, #3D2007 50%, #5C3D11 100%);
+    color: #fff;
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(212,160,23,0.18) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(200,90,17,0.15) 0%, transparent 55%);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(212,160,23,0.2);
+    border: 1px solid rgba(212,160,23,0.5);
+    color: var(--gold-light);
+    padding: 6px 20px;
+    border-radius: 40px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .hero h1 span { color: var(--gold-light); }
+  .hero .tamil-title {
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .hero p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.78);
+    max-width: 680px;
+    margin: 0 auto 36px;
+    position: relative;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .hero-stat {
+    text-align: center;
+  }
+  .hero-stat .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--gold-light);
+    display: block;
+  }
+  .hero-stat .lbl {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ── NAV PILLS ── */
+  .nav-pills {
+    background: var(--white);
+    padding: 16px 32px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: 2px solid #F0EBE0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .nav-pills a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: var(--brown);
+    background: var(--gold-pale);
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .nav-pills a:hover {
+    background: var(--gold);
+    color: var(--white);
+  }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  section { padding: 60px 0; border-bottom: 1px solid #EDE8DD; }
+  section:last-child { border-bottom: none; }
+
+  /* ── SECTION HEADERS ── */
+  .sec-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+  .sec-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--gold-light);
+    line-height: 1;
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+  .sec-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+  .sec-title .tamil {
+    font-size: 0.9rem;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    border: 1px solid #F0EBE0;
+  }
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--dark);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .card-title .icon { font-size: 1.3rem; }
+  .card .tamil-label {
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  /* ── OIL TYPES GRID ── */
+  .oil-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .oil-card {
+    background: linear-gradient(135deg, #FEF9EC, #FEFCE8);
+    border: 2px solid #F5D06A;
+    border-radius: 14px;
+    padding: 22px 16px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .oil-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(212,160,23,0.2); }
+  .oil-card .emoji { font-size: 2.5rem; margin-bottom: 10px; display: block; }
+  .oil-card h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+  .oil-card .tamil { font-size: 0.8rem; color: var(--gold); font-weight: 600; }
+  .oil-card .yield { font-size: 0.78rem; color: var(--gray); margin-top: 6px; }
+
+  /* ── STEP BOXES ── */
+  .steps { display: flex; flex-direction: column; gap: 16px; }
+  .step {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    border: 1px solid #F0EBE0;
+  }
+  .step-num {
+    background: linear-gradient(135deg, var(--gold), var(--orange));
+    color: white;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(212,160,23,0.3);
+  }
+  .step-content h4 {
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 4px;
+    font-size: 1rem;
+  }
+  .step-content .step-tamil { font-size: 0.8rem; color: var(--gold); font-weight: 600; margin-bottom: 6px; display: block; }
+  .step-content p { font-size: 0.9rem; color: #4B5563; }
+
+  /* ── INFO BOXES ── */
+  .info-box {
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 16px 0;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .info-box.tip { background: var(--green-light); border-left: 4px solid var(--green); }
+  .info-box.warning { background: var(--orange-light); border-left: 4px solid var(--orange); }
+  .info-box.important { background: var(--blue-light); border-left: 4px solid var(--blue); }
+  .info-box.danger { background: var(--red-light); border-left: 4px solid var(--red); }
+  .info-box .icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+  .info-box .text { font-size: 0.9rem; }
+  .info-box .text strong { display: block; margin-bottom: 4px; font-size: 0.95rem; }
+
+  /* ── TABLE ── */
+  .table-wrap { overflow-x: auto; margin: 20px 0; border-radius: 12px; box-shadow: var(--shadow); }
+  table { width: 100%; border-collapse: collapse; background: var(--white); }
+  thead { background: linear-gradient(135deg, var(--dark), var(--brown)); color: white; }
+  thead th { padding: 14px 16px; text-align: left; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; }
+  tbody tr:nth-child(even) { background: var(--gold-pale); }
+  tbody td { padding: 12px 16px; font-size: 0.88rem; border-bottom: 1px solid #F0EBE0; }
+  tbody tr:last-child td { border-bottom: none; }
+  .tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  .tag.green { background: var(--green-light); color: var(--green); }
+  .tag.orange { background: var(--orange-light); color: var(--orange); }
+  .tag.blue { background: var(--blue-light); color: var(--blue); }
+
+  /* ── BUDGET TABLE ── */
+  .budget-total {
+    background: linear-gradient(135deg, var(--dark), var(--brown));
+    color: white;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .budget-total .label { font-size: 0.9rem; opacity: 0.8; }
+  .budget-total .amount { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--gold-light); }
+
+  /* ── CHECKLIST ── */
+  .checklist { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--white);
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    border: 1px solid #F0EBE0;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  }
+  .checklist li .check {
+    width: 22px; height: 22px;
+    border: 2px solid var(--gold);
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold);
+    font-size: 0.75rem;
+  }
+  .checklist li .content { flex: 1; }
+  .checklist li .content .label { font-weight: 600; color: var(--dark); }
+  .checklist li .content .sub { font-size: 0.78rem; color: var(--gray); margin-top: 2px; }
+
+  /* ── TIMELINE ── */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 10px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), var(--orange));
+    border-radius: 2px;
+  }
+  .timeline-item { position: relative; margin-bottom: 28px; }
+  .timeline-item::before {
+    content: '';
+    position: absolute; left: -24px; top: 6px;
+    width: 14px; height: 14px;
+    background: var(--gold);
+    border-radius: 50%;
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 2px var(--gold);
+  }
+  .timeline-item .month {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .timeline-item h4 { font-size: 1rem; color: var(--dark); margin-bottom: 6px; }
+  .timeline-item p { font-size: 0.875rem; color: var(--gray); }
+
+  /* ── PROFIT VISUAL ── */
+  .profit-bars { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+  .profit-bar-row { display: flex; align-items: center; gap: 12px; }
+  .profit-bar-label { font-size: 0.82rem; font-weight: 600; width: 60px; flex-shrink: 0; color: var(--brown); }
+  .profit-bar-track { flex: 1; background: #F0EBE0; border-radius: 8px; height: 32px; position: relative; overflow: hidden; }
+  .profit-bar-fill {
+    height: 100%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: white;
+    transition: width 1s ease;
+  }
+
+  /* ── TWO COLUMNS ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight-box {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--brown) 100%);
+    color: white;
+    border-radius: var(--radius);
+    padding: 32px;
+    text-align: center;
+    margin: 24px 0;
+  }
+  .highlight-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+  .highlight-box p { opacity: 0.8; font-size: 0.95rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 0.85rem;
+  }
+  footer strong { color: var(--gold-light); }
+
+  /* ── MISC ── */
+  ul.bullet { padding-left: 20px; }
+  ul.bullet li { margin-bottom: 6px; font-size: 0.9rem; }
+  p.body { font-size: 0.93rem; color: #374151; margin-bottom: 12px; }
+  .text-gold { color: var(--gold); }
+  .mt-16 { margin-top: 16px; }
+
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .roadmap-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 22px;
+    border: 1px solid #F0EBE0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--gold);
+  }
+  .roadmap-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; color: var(--dark); }
+  .roadmap-card .phase { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); font-weight: 700; margin-bottom: 8px; }
+  .roadmap-card ul { padding-left: 16px; }
+  .roadmap-card ul li { font-size: 0.82rem; color: var(--gray); margin-bottom: 4px; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">🏭 Complete Startup Learning Guide</div>
+  <h1>The <span>Oil Processing</span><br>Business Blueprint</h1>
+  <p class="tamil-title">எண்ணெய் தொழில் தொடங்குவதற்கான முழுமையான வழிகாட்டி</p>
+  <p>From Zero to Oil Business Owner — Learn everything about starting a Coconut Oil, Sunflower Oil, Mustard Oil, Groundnut Oil, or any edible oil processing unit. Explained in simple English with Tamil meanings.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="num">₹15L</span><span class="lbl">Minimum Investment</span></div>
+    <div class="hero-stat"><span class="num">6+</span><span class="lbl">Oil Types Covered</span></div>
+    <div class="hero-stat"><span class="num">5 Yr</span><span class="lbl">Profit Roadmap</span></div>
+    <div class="hero-stat"><span class="num">30%</span><span class="lbl">Avg. Oil Yield</span></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav-pills">
+  <a href="#intro">Intro</a>
+  <a href="#oil-types">Oil Types</a>
+  <a href="#business-model">Business Model</a>
+  <a href="#process">Process</a>
+  <a href="#investment">Investment</a>
+  <a href="#machinery">Machinery</a>
+  <a href="#manpower">Manpower</a>
+  <a href="#marketing">Marketing</a>
+  <a href="#financials">Financials</a>
+  <a href="#legal">Legal</a>
+  <a href="#checklist">Checklist</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#mistakes">Mistakes</a>
+  <a href="#tips">Pro Tips</a>
+</nav>
+
+<div class="container">
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 1 – INTRODUCTION -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="intro">
+  <div class="sec-header">
+    <div class="sec-num">01</div>
+    <div class="sec-title">
+      <h2>Introduction — What is This Business?</h2>
+      <div class="tamil">அறிமுகம் — இந்த தொழில் என்ன?</div>
+    </div>
+  </div>
+
+  <p class="body">An <strong>Edible Oil Processing Business</strong> (சமையல் எண்ணெய் தயாரிப்பு தொழில்) means you buy oilseeds (like mustard seeds, coconut, sunflower seeds, groundnuts, sesame) and press them to extract oil, then bottle and sell that oil. This is one of India's most stable, essential food businesses — every household needs cooking oil every week!</p>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title"><span class="icon">💡</span> What is this business?</div>
+      <span class="tamil-label">இந்த தொழில் என்ன?</span>
+      <p style="font-size:0.9rem;">You buy raw seeds → press them in a machine → get oil → filter it → bottle it → sell it. The leftover solid after pressing is called <strong>Oil Cake</strong> (எண்ணெய் கேக் / பிண்ணாக்கு) which you also sell as animal feed. <strong>Two products, one process!</strong></p>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">🎯</span> Why is this a great business?</div>
+      <span class="tamil-label">ஏன் இது நல்ல தொழில்?</span>
+      <ul class="bullet">
+        <li>Oil is used every day in every home</li>
+        <li>Demand never goes down</li>
+        <li>Government gives subsidy (மானியம்)</li>
+        <li>Simple technology, easy to learn</li>
+        <li>By-product (oil cake) gives extra income</li>
+        <li>Can start small and grow big</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-box important">
+    <span class="icon">📌</span>
+    <div class="text">
+      <strong>Beginner Note (தொடக்கநிலை குறிப்பு):</strong>
+      This guide covers ALL types of edible oil businesses — Coconut Oil (தேங்காய் எண்ணெய்), Sunflower Oil (சூரியகாந்தி எண்ணெய்), Mustard Oil (கடுகு எண்ணெய்), Groundnut Oil (கடலை எண்ணெய்), Sesame Oil (நல்லெண்ணெய்), and more. The process is almost the same for all — only the seed changes!
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 2 – OIL TYPES -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="oil-types">
+  <div class="sec-header">
+    <div class="sec-num">02</div>
+    <div class="sec-title">
+      <h2>Types of Oil You Can Produce</h2>
+      <div class="tamil">நீங்கள் தயாரிக்கக்கூடிய எண்ணெய் வகைகள்</div>
+    </div>
+  </div>
+
+  <p class="body">The beauty of this business is that <strong>one set of machines can process multiple oils</strong>. Below are the most profitable oil types in India with their Tamil names and key facts:</p>
+
+  <div class="oil-grid">
+    <div class="oil-card">
+      <span class="emoji">🥥</span>
+      <h3>Coconut Oil</h3>
+      <div class="tamil">தேங்காய் எண்ணெய்</div>
+      <div class="yield">Yield: 60–65% from copra<br>Price: ₹120–180/litre<br>Best Market: South India, Kerala</div>
+    </div>
+    <div class="oil-card">
+      <span class="emoji">🌻</span>
+      <h3>Sunflower Oil</h3>
+      <div class="tamil">சூரியகாந்தி எண்ணெய்</div>
+      <div class="yield">Yield: 38–44%<br>Price: ₹90–130/litre<br>Best Market: Pan India</div>
+    </div>
+    <div class="oil-card">
+      <span class="emoji">🌿</span>
+      <h3>Mustard Oil</h3>
+      <div class="tamil">கடுகு எண்ணெய்</div>
+      <div class="yield">Yield: 26–30%<br>Price: ₹85–110/litre<br>Best Market: North India</div>
+    </div>
+    <div class="oil-card">
+      <span class="emoji">🥜</span>
+      <h3>Groundnut Oil</h3>
+      <div class="tamil">கடலை எண்ணெய்</div>
+      <div class="yield">Yield: 40–50%<br>Price: ₹140–180/litre<br>Best Market: South/West India</div>
+    </div>
+    <div class="oil-card">
+      <span class="emoji">🌾</span>
+      <h3>Sesame Oil</h3>
+      <div class="tamil">நல்லெண்ணெய் / எள் எண்ணெய்</div>
+      <div class="yield">Yield: 40–50%<br>Price: ₹200–350/litre<br>Best Market: Tamil Nadu, AP</div>
+    </div>
+    <div class="oil-card">
+      <span class="emoji">🫒</span>
+      <h3>Rice Bran Oil</h3>
+      <div class="tamil">அரிசி தவிடு எண்ணெய்</div>
+      <div class="yield">Yield: 15–22%<br>Price: ₹100–130/litre<br>Best Market: AP, Telangana</div>
+    </div>
+    <div class="oil-card">
+      <span class="emoji">🌰</span>
+      <h3>Castor Oil</h3>
+      <div class="tamil">ஆமணக்கு எண்ணெய்</div>
+      <div class="yield">Yield: 45–50%<br>Price: ₹85–120/litre<br>Best Market: Industrial use</div>
+    </div>
+    <div class="oil-card">
+      <span class="emoji">🟡</span>
+      <h3>Neem Oil</h3>
+      <div class="tamil">வேப்ப எண்ணெய்</div>
+      <div class="yield">Yield: 30–40%<br>Price: ₹80–100/litre<br>Best Market: Organic farming</div>
+    </div>
+  </div>
+
+  <div class="info-box tip">
+    <span class="icon">✅</span>
+    <div class="text">
+      <strong>Pro Recommendation (தொழில் ஆலோசனை):</strong>
+      If you are in Tamil Nadu or South India, start with <strong>Sesame Oil (நல்லெண்ணெய்)</strong> or <strong>Groundnut Oil (கடலை எண்ணெய்)</strong> — they have premium pricing and loyal customers. In North India, <strong>Mustard Oil</strong> is king. Choose based on the raw material available near your location!
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Oil Type / எண்ணெய் வகை</th>
+          <th>Raw Material / மூலப்பொருள்</th>
+          <th>Best Season</th>
+          <th>Market Demand</th>
+          <th>Difficulty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Coconut / தேங்காய்</td><td>Copra (Dried Coconut)</td><td>Year-round</td><td><span class="tag green">Very High</span></td><td><span class="tag green">Easy</span></td></tr>
+        <tr><td>Sunflower / சூரியகாந்தி</td><td>Sunflower Seeds</td><td>Mar–May</td><td><span class="tag green">Very High</span></td><td><span class="tag green">Easy</span></td></tr>
+        <tr><td>Mustard / கடுகு</td><td>Mustard Seeds</td><td>Nov–Feb</td><td><span class="tag green">High</span></td><td><span class="tag green">Easy</span></td></tr>
+        <tr><td>Groundnut / கடலை</td><td>Groundnut/Peanut</td><td>Oct–Jan</td><td><span class="tag green">High</span></td><td><span class="tag green">Easy</span></td></tr>
+        <tr><td>Sesame / நல்லெண்ணெய்</td><td>Sesame Seeds</td><td>Aug–Nov</td><td><span class="tag blue">Premium</span></td><td><span class="tag orange">Medium</span></td></tr>
+        <tr><td>Rice Bran / தவிடு</td><td>Rice Bran</td><td>Year-round</td><td><span class="tag blue">Medium</span></td><td><span class="tag orange">Medium</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 3 – BUSINESS MODEL -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="business-model">
+  <div class="sec-header">
+    <div class="sec-num">03</div>
+    <div class="sec-title">
+      <h2>Understanding the Business Model</h2>
+      <div class="tamil">வணிக மாதிரியை புரிந்துகொள்ளுதல்</div>
+    </div>
+  </div>
+
+  <p class="body">Think of this business like a simple equation: <strong>Buy Seeds → Press → Get Oil → Sell Oil + Sell Oil Cake = Profit</strong></p>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">💰</span> How Does the Money Flow? (பணம் எப்படி வருகிறது?)</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Activity</th><th>Tamil Meaning</th><th>Example (Groundnut Oil)</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Buy 100 kg groundnut</td><td>100 கிலோ கடலை வாங்கு</td><td>₹6,000 (₹60/kg)</td><td>Cost</td></tr>
+          <tr><td>Get 40 litres of oil</td><td>40 லிட்டர் எண்ணெய் கிடைக்கும்</td><td>₹6,400 (₹160/litre)</td><td>Revenue</td></tr>
+          <tr><td>Get 55 kg oil cake</td><td>55 கிலோ பிண்ணாக்கு கிடைக்கும்</td><td>₹1,375 (₹25/kg)</td><td>Bonus Revenue</td></tr>
+          <tr><td>Electricity, labour etc.</td><td>மின்சாரம், கூலி</td><td>₹800</td><td>Operating Cost</td></tr>
+          <tr><td><strong>PROFIT per 100kg</strong></td><td><strong>லாபம்</strong></td><td><strong>≈ ₹975</strong></td><td><strong>Profit</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col mt-16">
+    <div class="card">
+      <div class="card-title"><span class="icon">🏪</span> Who Are Your Customers?</div>
+      <span class="tamil-label">உங்கள் வாடிக்கையாளர்கள் யார்?</span>
+      <ul class="bullet">
+        <li><strong>Households (வீட்டு பயன்பாடு)</strong> — Retail customers buying 1–5L bottles</li>
+        <li><strong>Kiranas (கடைகள்)</strong> — Local grocery shops buying in bulk</li>
+        <li><strong>Hotels & Restaurants (ஹோட்டல்கள்)</strong> — Buy 15–200L regularly</li>
+        <li><strong>Caterers (கேட்டரிங்)</strong> — Event caterers buy huge quantities</li>
+        <li><strong>Supermarkets (சூப்பர் மார்கெட்)</strong> — Branded oil at premium price</li>
+        <li><strong>Online (ஆன்லைன்)</strong> — Amazon, Flipkart, etc.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">📦</span> Two Revenue Streams</div>
+      <span class="tamil-label">இரண்டு வருமான வழிகள்</span>
+      <p style="font-size:0.88rem;margin-bottom:10px;"><strong>Stream 1: Edible Oil (சமையல் எண்ணெய்)</strong><br>Main product. Sold in bottles (500ml, 1L, 5L, 15L tins). Premium pricing if branded.</p>
+      <p style="font-size:0.88rem;"><strong>Stream 2: Oil Cake / De-oiled Cake (பிண்ணாக்கு)</strong><br>By-product after pressing. Sold to dairy farms, poultry farms as animal feed. Extra income from waste!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 4 – MANUFACTURING PROCESS -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="process">
+  <div class="sec-header">
+    <div class="sec-num">04</div>
+    <div class="sec-title">
+      <h2>Step-by-Step Manufacturing Process</h2>
+      <div class="tamil">தயாரிப்பு செய்முறை — படிப்படியாக</div>
+    </div>
+  </div>
+
+  <p class="body">This is how oil is made from seeds. Every oil (coconut, sunflower, groundnut, sesame) follows basically the same steps. Let's learn each step like a beginner:</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Raw Material Procurement (மூலப்பொருள் கொள்முதல்)</h4>
+        <span class="step-tamil">விவசாயிகளிடமிருந்து நேரடியாக விதைகள் வாங்குவது</span>
+        <p>Buy seeds directly from farmers (விவசாயிகள்) or mandis (சந்தை). Buying directly saves 10–15% cost. For coconut oil: buy dried copra (dry coconut). Always check moisture level — wet seeds give less oil and spoil faster.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Cleaning (சுத்திகரிப்பு)</h4>
+        <span class="step-tamil">கல், மண், தூசி நீக்குதல்</span>
+        <p>Remove dirt, stones, dust, and foreign particles from the seeds using a cleaning machine (சுத்திகரிப்பு இயந்திரம்) or vibrating sieve (சல்லடை). Dirty seeds can damage the expeller machine and reduce oil quality. Think of this like washing vegetables before cooking!</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Drying (உலர்த்துதல்)</h4>
+        <span class="step-tamil">ஈரப்பதத்தை குறைத்தல்</span>
+        <p>Seeds must have low moisture for maximum oil extraction. Dry in sunlight (சூரிய வெளிச்சம் — free!) or use a mechanical dryer. Target moisture: below 8%. Wet seeds = less oil + bad quality oil. This step is FREE if you use sunlight!</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h4>Heating / Cooking (வெப்பமாக்குதல்)</h4>
+        <span class="step-tamil">விதைகளை வேகவைத்தல்</span>
+        <p>Seeds are heated in a cooking/heating kettle (வேகவைக்கும் பாத்திரம்) to around 60–80°C. This breaks the cell walls of seeds, allowing MORE oil to come out easily. It also improves the oil's taste and aroma. Skip this step = 5–10% less oil yield.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <h4>Oil Extraction / Pressing (எண்ணெய் பிழிதல்)</h4>
+        <span class="step-tamil">எண்ணெய் எந்திரத்தில் பிழிதல்</span>
+        <p>Hot seeds are fed into the Oil Expeller Machine (எண்ணெய் பிழியும் இயந்திரம்). Inside the machine, a large rotating screw (worm) crushes the seeds and squeezes the oil out. The oil flows out through small holes. The solid leftover is Oil Cake (பிண்ணாக்கு). One machine can process 200–500 kg seeds per hour!</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-content">
+        <h4>Filtration (வடிகட்டுதல்)</h4>
+        <span class="step-tamil">கலப்படம் நீக்குதல்</span>
+        <p>Raw extracted oil contains seed particles, moisture, and impurities. Use a Filter Press (வடிகட்டு இயந்திரம்) to get clear, pure oil. This is exactly like using a coffee filter — impurities stay behind, clean oil passes through. This step directly impacts oil quality and shelf life.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-content">
+        <h4>Quality Check (தரம் சோதனை)</h4>
+        <span class="step-tamil">தரம் பரிசோதனை</span>
+        <p>Check the oil for: colour (நிறம்), smell (வாசனை), free fatty acid level (FFA), moisture content. For FSSAI compliance, you must test your oil regularly. Get samples tested at a NABL-accredited lab (₹500–2000 per test). Good quality = loyal customers + legal compliance.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">8</div>
+      <div class="step-content">
+        <h4>Packaging (பேக்கேஜிங்)</h4>
+        <span class="step-tamil">பாட்டிலில் அடைத்தல்</span>
+        <p>Fill the oil into bottles (500ml, 1 litre, 5 litre) or tins (15 litre) using a filling machine. Seal with caps. Attach your branded label. Pack in cartons for delivery. <strong>Packaging is your brand's face — invest in good design!</strong></p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">9</div>
+      <div class="step-content">
+        <h4>Storage & Dispatch (சேமிப்பு மற்றும் விநியோகம்)</h4>
+        <span class="step-tamil">கிடங்கு மற்றும் விற்பனை</span>
+        <p>Store finished oil in a cool, dry place away from direct sunlight. Oil shelf life: 6–12 months. Dispatch to retailers, hotels, and customers. Maintain stock rotation — sell older stock first (FIFO method).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box tip">
+    <span class="icon">💡</span>
+    <div class="text">
+      <strong>Wood-Pressed / Cold-Pressed Oil (மரக்கோல் எண்ணெய் / சீதள அழுத்த எண்ணெய்) — Premium Opportunity!</strong><br>
+      Cold-pressed or wood-pressed (chekku) oil is extracted WITHOUT heating, keeping more nutrients. This sells for 2–3x more price. Example: Cold-pressed sesame oil sells at ₹400–600/litre vs regular ₹200. It's a premium niche with rapidly growing demand from health-conscious buyers!
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 5 – INVESTMENT PLANNING -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="investment">
+  <div class="sec-header">
+    <div class="sec-num">05</div>
+    <div class="sec-title">
+      <h2>Investment Planning & Budget</h2>
+      <div class="tamil">முதலீட்டு திட்டமிடல் மற்றும் பட்ஜெட்</div>
+    </div>
+  </div>
+
+  <p class="body">Here's the complete budget breakdown for starting a small edible oil unit. All figures are based on the government DPR model and real market rates:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>#</th><th>Item / பொருள்</th><th>Tamil Name</th><th>Small Scale (₹)</th><th>Medium Scale (₹)</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Land & Building</td><td>நிலம் & கட்டிடம்</td><td>4,00,000</td><td>10,00,000</td><td>Own land saves cost</td></tr>
+        <tr><td>2</td><td>Oil Expeller Machine</td><td>எண்ணெய் பிழியும் இயந்திரம்</td><td>2,60,000</td><td>6,00,000</td><td>Main machine</td></tr>
+        <tr><td>3</td><td>Heating Kettle</td><td>வேகவைக்கும் பாத்திரம்</td><td>38,000</td><td>80,000</td><td>Pre-heating seeds</td></tr>
+        <tr><td>4</td><td>Filter Press</td><td>வடிகட்டு இயந்திரம்</td><td>1,25,000</td><td>2,50,000</td><td>Oil purification</td></tr>
+        <tr><td>5</td><td>Electric Motor</td><td>மின் மோட்டார்</td><td>65,000</td><td>1,20,000</td><td>20HP minimum</td></tr>
+        <tr><td>6</td><td>Spare Parts</td><td>உதிரி பாகங்கள்</td><td>30,000</td><td>50,000</td><td>Essential</td></tr>
+        <tr><td>7</td><td>Accessories & Pipes</td><td>குழாய்கள் & உபகரணம்</td><td>16,000</td><td>30,000</td><td>Fittings</td></tr>
+        <tr><td>8</td><td>Furniture & Fixtures</td><td>சாமான்கள்</td><td>50,000</td><td>1,00,000</td><td>Office + Store</td></tr>
+        <tr><td>9</td><td>Electrical Work</td><td>மின் வேலை</td><td>75,000</td><td>1,50,000</td><td>Wiring, boards</td></tr>
+        <tr><td>10</td><td>Working Capital</td><td>பணி முதலீடு</td><td>2,15,000</td><td>5,00,000</td><td>Seeds, packaging</td></tr>
+        <tr><td>11</td><td>Packaging Machine</td><td>பேக்கேஜிங் இயந்திரம்</td><td>80,000</td><td>2,00,000</td><td>Bottle filling</td></tr>
+        <tr><td>12</td><td>Contingency (5%)</td><td>தேவையற்ற செலவுகள்</td><td>62,000</td><td>1,50,000</td><td>Emergency buffer</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="budget-total">
+    <div>
+      <div class="label">Total Investment (Small Scale)</div>
+      <div style="font-size:0.78rem;opacity:0.6;margin-top:2px;">மொத்த முதலீடு (சிறிய அளவு)</div>
+    </div>
+    <div class="amount">≈ ₹15–16 Lakhs</div>
+  </div>
+
+  <div class="card mt-16">
+    <div class="card-title"><span class="icon">🏦</span> Means of Finance — How to Arrange Money?</div>
+    <span class="tamil-label">பணம் எங்கிருந்து வரும்?</span>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Source / ஆதாரம்</th><th>Tamil</th><th>Amount</th><th>%</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr><td>Your Own Money (Promoter)</td><td>உங்கள் சொந்த பணம்</td><td>₹4.26L</td><td>28%</td><td>Minimum 20% required</td></tr>
+          <tr><td>Bank Loan (Term Loan)</td><td>வங்கி கடன்</td><td>₹5.54L</td><td>37%</td><td>Repay over 5 years at 11%</td></tr>
+          <tr><td>Govt. Subsidy (PMFME)</td><td>அரசு மானியம்</td><td>₹5.27L</td><td>35%</td><td>No repayment needed!</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="info-box important" style="margin-top:14px;">
+      <span class="icon">📌</span>
+      <div class="text"><strong>PMFME Scheme (அரசு திட்டம்):</strong> The Government of India's PM Formalisation of Micro Food Processing Enterprises scheme gives up to ₹10 Lakh as a subsidy (35% of project cost). You don't repay this! Apply through your District Industries Centre (DIC). This is FREE money for starting your business!</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 6 – MACHINERY -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="machinery">
+  <div class="sec-header">
+    <div class="sec-num">06</div>
+    <div class="sec-title">
+      <h2>Machinery & Equipment Guide</h2>
+      <div class="tamil">இயந்திரங்கள் மற்றும் உபகரண வழிகாட்டி</div>
+    </div>
+  </div>
+
+  <p class="body">Here is every machine you need, explained in simple terms. Don't get confused by technical names — we'll make it simple!</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">🔧</div>
+      <div class="step-content">
+        <h4>Oil Expeller Machine (எண்ணெய் பிழியும் இயந்திரம்) — ₹2.5–6L</h4>
+        <span class="step-tamil">மிக முக்கியமான இயந்திரம்</span>
+        <p><strong>What it does:</strong> The main machine. Has a rotating screw inside that crushes seeds and squeezes oil out. Like a giant garlic press! Capacity: 100–500 kg/hour. Buy from reputed brands: Tinytech, Komet, or local Rajkot manufacturers. Always check the "crushing capacity" — more is better for production.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">🍳</div>
+      <div class="step-content">
+        <h4>Heating Kettle / Cooker (வேகவைக்கும் கலன்) — ₹35–80K</h4>
+        <span class="step-tamil">விதைகளை சூடாக்கும் கலன்</span>
+        <p><strong>What it does:</strong> A large round pot with a steam jacket or direct heating that heats seeds before pressing. Heating increases oil yield by 5–10%. Works like a pressure cooker but for seeds. Capacity: 100–300 kg batch.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">🔍</div>
+      <div class="step-content">
+        <h4>Filter Press (வடிகட்டு அழுத்தி) — ₹1–2.5L</h4>
+        <span class="step-tamil">எண்ணெயை சுத்தப்படுத்தும் இயந்திரம்</span>
+        <p><strong>What it does:</strong> Raw oil from expeller is cloudy with particles. Filter press uses filter cloths to separate these impurities. Result: crystal clear oil. Think of it like a large tea strainer. Size: 18"×18" with 18 plates minimum for a small unit.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">⚡</div>
+      <div class="step-content">
+        <h4>Electric Motor (மின் மோட்டார்) — ₹60–120K</h4>
+        <span class="step-tamil">இயந்திரத்தை இயக்கும் மோட்டார்</span>
+        <p><strong>What it does:</strong> Powers the expeller machine. Minimum 20 HP (horse power) for a standard unit. Buy branded motors (Crompton, Siemens, ABB) with L&T starter for safety. Use 3-phase electricity connection. Higher HP = faster processing but more electricity cost.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">📦</div>
+      <div class="step-content">
+        <h4>Oil Filling Machine (எண்ணெய் நிரப்பும் இயந்திரம்) — ₹80K–2L</h4>
+        <span class="step-tamil">பாட்டிலில் எண்ணெய் அடைக்கும் இயந்திரம்</span>
+        <p><strong>What it does:</strong> Automatically fills exact quantities into bottles. Semi-automatic machines fill 500–1000 bottles/hour. Prevents wastage and ensures accurate measurement. Also available: manual tap fillers (cheap but slow) for very small scale.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">🧪</div>
+      <div class="step-content">
+        <h4>Cleaning Machine / Destoner (சுத்திகரிப்பு இயந்திரம்) — ₹50–80K</h4>
+        <span class="step-tamil">விதைகளிலுள்ள அழுக்கை நீக்கும் இயந்திரம்</span>
+        <p><strong>What it does:</strong> Vibrating sieve that separates stones, dust, and foreign particles from seeds before pressing. Protects your expensive expeller machine from damage. Optional for very small scale but highly recommended.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box warning">
+    <span class="icon">⚠️</span>
+    <div class="text">
+      <strong>Important Machine Buying Tips (இயந்திரம் வாங்கும்போது கவனிக்க வேண்டியவை):</strong><br>
+      1. Always see a demonstration (டெமோ) before buying. 2. Check spare parts availability in your area. 3. Get warranty in writing (குறைந்தது 1 வருடம்). 4. Rajkot (Gujarat) is the hub for oil mill machinery — you can buy directly and save 20–30%. 5. Don't buy second-hand machines for your first unit — too risky!
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 7 – MANPOWER -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="manpower">
+  <div class="sec-header">
+    <div class="sec-num">07</div>
+    <div class="sec-title">
+      <h2>Manpower Planning</h2>
+      <div class="tamil">மனித வளத் திட்டமிடல்</div>
+    </div>
+  </div>
+
+  <p class="body">You don't need many staff to start. Here's who you need and what they do:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Role / பணி</th><th>Tamil</th><th>Count</th><th>Monthly Salary</th><th>What They Do</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Machine Operator</td><td>இயந்திர ஓட்டுநர்</td><td>2</td><td>₹15,000 each</td><td>Operate expeller, filter, and packaging machines</td></tr>
+        <tr><td>Skilled/Unskilled Worker</td><td>திறமையான/திறமையற்ற தொழிலாளி</td><td>2</td><td>₹11,000 each</td><td>Load/unload seeds, handle oil cake</td></tr>
+        <tr><td>Helper</td><td>உதவியாளர்</td><td>3</td><td>₹8,000 each</td><td>General work, cleaning, packaging</td></tr>
+        <tr><td>Accountant/Store Keeper</td><td>கணக்காளர்/கிடங்கு பாதுகாவலர்</td><td>1</td><td>₹20,000</td><td>Billing, stock management, accounts</td></tr>
+        <tr><td>Sales Executive</td><td>விற்பனையாளர்</td><td>1</td><td>₹16,000</td><td>Visit shops, hotels, take orders</td></tr>
+        <tr><td><strong>TOTAL</strong></td><td><strong>மொத்தம்</strong></td><td><strong>9</strong></td><td><strong>~₹1.2L/month</strong></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box tip">
+    <span class="icon">💡</span>
+    <div class="text">
+      <strong>Family Business Tip (குடும்ப தொழில் ஆலோசனை):</strong>
+      If this is a family business (குடும்ப தொழில்), family members can handle accounts and sales, saving ₹36,000+/month. Many successful oil mills in Tamil Nadu are run by husband-wife teams! You can start with just 4–5 staff initially.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 8 – MARKETING -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="marketing">
+  <div class="sec-header">
+    <div class="sec-num">08</div>
+    <div class="sec-title">
+      <h2>Marketing & Sales Strategy</h2>
+      <div class="tamil">சந்தைப்படுத்தல் மற்றும் விற்பனை திட்டம்</div>
+    </div>
+  </div>
+
+  <p class="body">Even the best oil won't sell itself. Here's a complete marketing plan from Day 1:</p>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title"><span class="icon">🏷️</span> Phase 1: Branding (முதல் மாதம்)</div>
+      <span class="tamil-label">பிராண்ட் உருவாக்குதல்</span>
+      <ul class="bullet">
+        <li>Choose a Tamil/Regional brand name (e.g., "Ponni Gold", "Chekku Fresh")</li>
+        <li>Design a logo (₹2,000–5,000 on freelancer)</li>
+        <li>Create bottle labels — mention "Natural", "Cold-Pressed", "No Added Chemicals"</li>
+        <li>Register your brand (Trademark) later as you grow</li>
+        <li>Make 500ml, 1L, 5L bottle sizes available</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">🛒</span> Phase 2: Local Distribution (மாதம் 2–3)</div>
+      <span class="tamil-label">உள்ளூர் விநியோகம்</span>
+      <ul class="bullet">
+        <li>Visit 50 local kirana stores — give FREE samples</li>
+        <li>Offer credit terms (30-day payment) to build trust</li>
+        <li>Target ration shops, cooperative stores</li>
+        <li>Approach AAVIN / dairy farmer cooperatives</li>
+        <li>Join local traders' WhatsApp groups</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">🍽️</span> Phase 3: Hotel & Catering (மாதம் 3–6)</div>
+      <span class="tamil-label">ஹோட்டல் மற்றும் கேட்டரிங்</span>
+      <ul class="bullet">
+        <li>Hotels buy 15–100L per week — huge volume!</li>
+        <li>Give special bulk pricing (₹5–10/litre discount)</li>
+        <li>Approach catering companies for event supply</li>
+        <li>Provide 15L tins with your branding</li>
+        <li>Build a route (hotel route visits every 2 weeks)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">📱</span> Phase 4: Digital Marketing (மாதம் 4+)</div>
+      <span class="tamil-label">டிஜிட்டல் சந்தைப்படுத்தல்</span>
+      <ul class="bullet">
+        <li>Create Instagram/Facebook page — show your oil making process!</li>
+        <li>List on Amazon, Flipkart, JioMart</li>
+        <li>Create WhatsApp Business catalog</li>
+        <li>Partner with organic/health food influencers</li>
+        <li>List on Meesho for rural distribution</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <h3>🏆 Your Biggest Marketing Weapon</h3>
+    <p>Show customers YOUR process — people love seeing fresh, natural oil being made. A simple 30-second Reels video of your oil expeller in action can get 10,000+ views and bring real customers. <strong>Transparency = Trust = Sales!</strong></p>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">💬</span> Pricing Strategy (விலை நிர்ணயம்)</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Channel / சேனல்</th><th>Strategy</th><th>Example Price (Sesame Oil)</th><th>Margin</th></tr></thead>
+        <tbody>
+          <tr><td>Retail (சில்லறை)</td><td>Premium branded</td><td>₹250/litre</td><td>40–60%</td></tr>
+          <tr><td>Wholesale (மொத்தம்)</td><td>Volume discount</td><td>₹200/litre</td><td>20–30%</td></tr>
+          <tr><td>Hotels (ஹோட்டல்)</td><td>Bulk pricing</td><td>₹185/litre</td><td>15–25%</td></tr>
+          <tr><td>Online (ஆன்லைன்)</td><td>Premium + shipping</td><td>₹280/litre</td><td>45–65%</td></tr>
+          <tr><td>Organic/Health stores</td><td>Super premium</td><td>₹350–500/litre</td><td>60–80%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 9 – FINANCIAL ANALYSIS -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="financials">
+  <div class="sec-header">
+    <div class="sec-num">09</div>
+    <div class="sec-title">
+      <h2>Financial Analysis & Profit Projection</h2>
+      <div class="tamil">நிதி பகுப்பாய்வு மற்றும் லாப கணிப்பு</div>
+    </div>
+  </div>
+
+  <p class="body">Here's the projected financial performance over 5 years for a standard small oil unit (based on DPR data). Capacity starts at 50% and grows to 70%:</p>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">📈</span> 5-Year Profit Growth</div>
+    <span class="tamil-label">5 ஆண்டு லாப வளர்ச்சி</span>
+    <div class="profit-bars">
+      <div class="profit-bar-row">
+        <div class="profit-bar-label">Year 1</div>
+        <div class="profit-bar-track">
+          <div class="profit-bar-fill" style="width:20%;background:linear-gradient(90deg,#D4A017,#C85A11);">₹1.4L</div>
         </div>
       </div>
-
-      <div class="panels-container">
-        <div class="panel left-panel">
-          <div class="content">
-            <h3>New here ?</h3>
-            <p>
-              Create an account to start your journey with us and explore all our features.
-            </p>
-            <button class="btn transparent" id="sign-up-btn">
-              Sign up
-            </button>
-          </div>
-          <img src="img/log.svg" class="image" alt="" />
+      <div class="profit-bar-row">
+        <div class="profit-bar-label">Year 2</div>
+        <div class="profit-bar-track">
+          <div class="profit-bar-fill" style="width:35%;background:linear-gradient(90deg,#D4A017,#C85A11);">₹2.65L</div>
         </div>
-        <div class="panel right-panel">
-          <div class="content">
-            <h3>One of us ?</h3>
-            <p>
-              To keep connected with us, please log in with your personal account details.
-            </p>
-            <button class="btn transparent" id="sign-in-btn">
-              Sign in
-            </button>
-          </div>
-          <img src="img/register.svg" class="image" alt="" />
+      </div>
+      <div class="profit-bar-row">
+        <div class="profit-bar-label">Year 3</div>
+        <div class="profit-bar-track">
+          <div class="profit-bar-fill" style="width:52%;background:linear-gradient(90deg,#D4A017,#C85A11);">₹4.09L</div>
+        </div>
+      </div>
+      <div class="profit-bar-row">
+        <div class="profit-bar-label">Year 4</div>
+        <div class="profit-bar-track">
+          <div class="profit-bar-fill" style="width:67%;background:linear-gradient(90deg,#D4A017,#C85A11);">₹5.21L</div>
+        </div>
+      </div>
+      <div class="profit-bar-row">
+        <div class="profit-bar-label">Year 5</div>
+        <div class="profit-bar-track">
+          <div class="profit-bar-fill" style="width:85%;background:linear-gradient(90deg,#2D6A4F,#1B4F72);">₹6.52L</div>
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="app.js"></script>
-  </body>
+  <div class="table-wrap mt-16">
+    <table>
+      <thead>
+        <tr><th>Financial Metric / நிதி அளவீடு</th><th>Year 1</th><th>Year 3</th><th>Year 5</th><th>Simple Meaning</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Total Sales (மொத்த விற்பனை)</td><td>₹67.65L</td><td>₹95.70L</td><td>₹1.23 Cr</td><td>Total income from oil + oil cake</td></tr>
+        <tr><td>Gross Profit (மொத்த லாபம்)</td><td>₹9.61L (14%)</td><td>₹14.39L (15%)</td><td>₹20.25L (16%)</td><td>Sales minus direct costs</td></tr>
+        <tr><td>Net Profit (நிகர லாபம்)</td><td>₹1.40L (2.1%)</td><td>₹4.09L (4.3%)</td><td>₹6.52L (6.2%)</td><td>Final profit after ALL expenses</td></tr>
+        <tr><td>Break-Even Point (சம நிலை புள்ளி)</td><td>43%</td><td>42%</td><td>40%</td><td>Capacity at which you don't lose money</td></tr>
+        <tr><td>Current Ratio (நடப்பு விகிதம்)</td><td>1.46</td><td>1.80</td><td>2.13</td><td>Above 1.5 = financially healthy ✅</td></tr>
+        <tr><td>DSCR (கடன் திருப்பிச் செலுத்தும் திறன்)</td><td colspan="3" style="text-align:center;">3.63 (Excellent — Bank loves this!)</td><td>Above 1.5 = safe to repay loan</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box important">
+    <span class="icon">🔑</span>
+    <div class="text">
+      <strong>Key Financial Terms Simply Explained (எளிய நிதி சொற்கள்):</strong><br>
+      • <strong>Break-Even Point (சம நிலை புள்ளி)</strong> = The minimum production at which you cover all costs. At 43% capacity, you just break even in Year 1. So run at 50%+ to make profit.<br>
+      • <strong>DSCR (Debt Service Coverage Ratio)</strong> = Your ability to repay bank loan. 3.63 means you earn 3.63x more than what you need to repay. Banks require minimum 1.25 — you're at 3.63, which is excellent!<br>
+      • <strong>Working Capital (பணி முதலீடு)</strong> = Money needed for daily operations — buying seeds, paying wages BEFORE you sell the oil.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 10 – LEGAL & REGISTRATION -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="legal">
+  <div class="sec-header">
+    <div class="sec-num">10</div>
+    <div class="sec-title">
+      <h2>Legal Registration & Compliance</h2>
+      <div class="tamil">சட்ட பதிவு மற்றும் இணக்கம்</div>
+    </div>
+  </div>
+
+  <p class="body">You MUST register your business before selling oil. Here are all the registrations you need, explained simply:</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">📋</div>
+      <div class="step-content">
+        <h4>FSSAI License (உணவு பாதுகாப்பு உரிமம்) — MANDATORY</h4>
+        <span class="step-tamil">கட்டாயம் தேவை</span>
+        <p><strong>What:</strong> Food Safety and Standards Authority of India license. Without this, you CANNOT sell food products in India. <strong>How to get:</strong> Apply at fssai.gov.in. For annual turnover under ₹12L: Basic Registration (₹100/year). For ₹12L–20Cr: State License (₹2,000–5,000/year). Takes 7–30 days. <strong>Don't skip this — heavy fines if caught!</strong></p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">🏢</div>
+      <div class="step-content">
+        <h4>Business Registration (வணிக பதிவு)</h4>
+        <span class="step-tamil">தொழில் பதிவு</span>
+        <p>Register as Proprietorship (தனிவணிகம் — easiest), Partnership (கூட்டாளி தொழில்), or Pvt Ltd Company. For starting, <strong>Sole Proprietorship</strong> is easiest. Just open a current account with your business name. Apply for Udyam Registration (MSME) at udyamregistration.gov.in — FREE and gives you access to government schemes!</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">📊</div>
+      <div class="step-content">
+        <h4>GST Registration (சரக்கு சேவை வரி பதிவு)</h4>
+        <span class="step-tamil">GST பதிவு</span>
+        <p>If your annual turnover exceeds ₹40 Lakhs, GST registration is mandatory. Edible oils attract 5% GST. Register at gst.gov.in — free. File monthly/quarterly returns. Benefit: You can claim Input Tax Credit (ITC) on machinery purchase!</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">💧</div>
+      <div class="step-content">
+        <h4>BIS / Agmark Certification (தர சான்றிதழ்)</h4>
+        <span class="step-tamil">தர சான்றிதழ்</span>
+        <p><strong>Agmark</strong> is a quality certification from the Government for agricultural products including oils. Having Agmark on your bottle dramatically increases customer trust and allows you to sell in government channels. Apply at agmark.dac.gov.in. Costs ₹5,000–20,000/year. <strong>Additional Recommendation: Get ISI/BIS mark for premium market access.</strong></p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">🏭</div>
+      <div class="step-content">
+        <h4>Factory License & Local Permissions (தொழிற்சாலை உரிமம்)</h4>
+        <span class="step-tamil">உள்ளூர் அனுமதி</span>
+        <p>Get NOC (No Objection Certificate) from local Panchayat/Municipality. If hiring 10+ workers, register under Factories Act at your state Labour Department. Obtain electricity connection (industrial tariff) from TANGEDCO/MSEB. Also get Pollution Control Board NOC if required by your state.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">🎯</div>
+      <div class="step-content">
+        <h4>PMFME Scheme Application (அரசு திட்ட விண்ணப்பம்)</h4>
+        <span class="step-tamil">மானிய விண்ணப்பம்</span>
+        <p>Apply for PM Formalisation of Micro Food Processing Enterprises scheme to get up to ₹10 Lakh subsidy (35% of project cost). Apply through your District Industries Centre (DIC) or at pmfme.mofpi.gov.in. Also explore: MUDRA Loan (₹10L – no collateral), NABARD schemes for food processing, State government schemes for MSMEs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 11 – STARTUP CHECKLIST -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="checklist">
+  <div class="sec-header">
+    <div class="sec-num">11</div>
+    <div class="sec-title">
+      <h2>Complete Startup Checklist</h2>
+      <div class="tamil">தொடக்க சரிபார்ப்பு பட்டியல்</div>
+    </div>
+  </div>
+
+  <p class="body">Use this checklist to ensure you've completed every step before launching:</p>
+
+  <ul class="checklist">
+    <li><div class="check">✓</div><div class="content"><div class="label">Market Research Done (சந்தை ஆராய்ச்சி)</div><div class="sub">Identify your target area, competitors, and most demanded oil type in your location</div></div></li>
+    <li><div class="check">✓</div><div class="content"><div class="label">Location Finalized (இடம் தேர்வு)</div><div class="sub">Minimum 1,000 sq ft factory space with 3-phase electricity and water supply</div></div></li>
+    <li><div class="check">✓</div><div class="content"><div class="label">FSSAI License Applied (FSSAI உரிமம்)</div><div class="sub">Apply online before starting production — mandatory!</div></div></li>
+    <li><div class="check">✓</div><div class="content"><div class="label">Udyam/MSME Registration (MSME பதிவு)</div><div class="sub">Free registration gives access to government schemes and loans</div></div></li>
+    <li><div class="check">✓</div><div class="content"><div class="label">Business Bank Account Opened (வங்கி கணக்கு)</div><div class="sub">Current account in business name for financial credibility</div></div></li>
+    <li><div class="check">✓</div><div class="content"><div class="label">Machinery Purchased (இயந்திரம் வாங்கியது)</div><div class="sub">Oil expeller, filter press, heating kettle, motor — with warranty</div></div></li>
+    <li><div class="check">✓</div><div class="content"><div class="label">Raw Material Supplier Identified (மூலப்பொருள் வழங்குநர்)</div><div class="sub">Direct farmer or local mandi with consistent supply agreement</div></div></li>
+    <li><div class="check">✓</div><div class="content"><div class="label">Brand & Label Designed (பிராண்ட் வடிவமைப்பு)</div><div class="sub">Logo, bottle labels with all mandatory information (FSSAI no., MRP, date)</div></div></li>
+    <li><div class="check">✓</div><div class="content"><div class="label">Packaging Material Ready (பேக்கேஜிங் தயார்)</div><div class="sub">Bottles (500ml, 1L, 5L), caps, labels, carton boxes in stock</div></div></li>
+    <li><div class="check">✓</div><div class="content"><div class="label">Staff Hired & Trained (பணியாளர் பயிற்சி)</div><div class="sub">Machine operators trained on safety and operations</div></div></li>
+    <li><div class="check">✓</div><div class="content"><div class="label">GST Registration (GST பதிவு)</div><div class="sub">If turnover expected above ₹40L/year</div></div></li>
+    <li><div class="check">✓</div><div class="content"><div class="label">Trial Run Completed (சோதனை இயக்கம்)</div><div class="sub">Run machine for 2–3 days, check oil quality before full production</div></div></li>
+    <li><div class="check">✓</div><div class="content"><div class="label">First 10 Customers Secured (முதல் 10 வாடிக்கையாளர்)</div><div class="sub">Get commitments from local shops/hotels before full launch</div></div></li>
+    <li><div class="check">✓</div><div class="content"><div class="label">PMFME/Subsidy Application Filed (மானிய விண்ணப்பம்)</div><div class="sub">Apply for government subsidy through DIC or online portal</div></div></li>
+  </ul>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 12 – STARTUP TIMELINE -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="timeline">
+  <div class="sec-header">
+    <div class="sec-num">12</div>
+    <div class="sec-title">
+      <h2>6-Month Startup Timeline</h2>
+      <div class="tamil">6 மாத தொடக்க காலவரிசை</div>
+    </div>
+  </div>
+
+  <p class="body">Here is a practical month-by-month action plan to go from idea to earning money in 6 months:</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="month">Month 1 — Research & Plan (ஆராய்ச்சி மற்றும் திட்டம்)</div>
+      <h4>Foundation Phase</h4>
+      <p>Visit 3–5 existing oil mills in your area. Talk to farmers about seed prices. Decide which oil type to produce. Identify your location. Open a business bank account. Apply for Udyam/MSME registration (free, online, 5 minutes). Start PMFME subsidy application process.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="month">Month 2 — Legal & Finance (சட்டம் மற்றும் நிதி)</div>
+      <h4>Compliance Phase</h4>
+      <p>Apply for FSSAI license. Submit bank loan application with DPR. Finalize building location and get rent agreement / construction started. Apply for 3-phase industrial electricity connection (takes 30–45 days). Get quotes from 3+ machinery suppliers. Finalize brand name and logo design.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="month">Month 3 — Setup (அமைப்பு நிறுவுதல்)</div>
+      <h4>Infrastructure Phase</h4>
+      <p>Civil work completion: factory floors, oil collection pits, storage area. Order and receive machinery. Install machines with manufacturer's help. Get electrical work done. Purchase initial packaging materials. Print branded labels and bottle caps. Hire machine operator (get experienced person from another mill).</p>
+    </div>
+    <div class="timeline-item">
+      <div class="month">Month 4 — Trial Production (சோதனை உற்பத்தி)</div>
+      <h4>Testing Phase</h4>
+      <p>Buy 500 kg raw material for trial run. Run the expeller machine. Note the oil yield, quality, and any machine issues. Fix all problems. Send oil sample to lab for quality testing. Get FSSAI license number (should arrive by now). Print final labels with FSSAI number.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="month">Month 5 — Pre-Launch Marketing (முக்கியமான மாதம்)</div>
+      <h4>Market Entry Phase</h4>
+      <p>Visit 50+ local kirana stores with free samples. Approach 10–15 hotels and restaurants. Create WhatsApp Business profile and catalog. Set up Instagram/Facebook page. List on Amazon/Flipkart if targeting online. Take pre-orders before full production. Build distributor relationships.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="month">Month 6 — Full Launch (முழு அளவு தொடக்கம்!)</div>
+      <h4>Production & Sales Phase</h4>
+      <p>Start full production at 50% capacity. Deliver first orders to all confirmed customers. Collect feedback actively. Start tracking daily production, sales, and cash flow. Review financial performance against DPR projections. Plan for month 7 expansion of customer base. CELEBRATE — you're a business owner now! 🎉</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 13 – COMMON MISTAKES -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="mistakes">
+  <div class="sec-header">
+    <div class="sec-num">13</div>
+    <div class="sec-title">
+      <h2>Common Mistakes to Avoid</h2>
+      <div class="tamil">தவிர்க்க வேண்டிய பொதுவான தவறுகள்</div>
+    </div>
+  </div>
+
+  <div class="info-box danger">
+    <span class="icon">❌</span>
+    <div class="text"><strong>Mistake 1: Skipping FSSAI Registration</strong> — Selling oil without FSSAI license can result in ₹2–5 Lakh fines and business closure. Never skip this!</div>
+  </div>
+  <div class="info-box danger">
+    <span class="icon">❌</span>
+    <div class="text"><strong>Mistake 2: Buying Low-Quality Machines (மோசமான இயந்திரம்)</strong> — Cheap machines break down often, give less oil yield, and cost more in repairs. Buy from reputed manufacturers with warranty. The machine is your profit-maker!</div>
+  </div>
+  <div class="info-box danger">
+    <span class="icon">❌</span>
+    <div class="text"><strong>Mistake 3: Not Testing Oil Quality (தர சோதனை இல்லாமல்)</strong> — Selling adulterated or sub-standard oil destroys your brand forever. Test every batch before selling.</div>
+  </div>
+  <div class="info-box danger">
+    <span class="icon">❌</span>
+    <div class="text"><strong>Mistake 4: Ignoring Working Capital (பணி முதலீட்டை புறக்கணித்தல்)</strong> — Many new businesses fail because they use all money on machines and have nothing left to buy raw materials. Keep 2–3 months of working capital as reserve!</div>
+  </div>
+  <div class="info-box danger">
+    <span class="icon">❌</span>
+    <div class="text"><strong>Mistake 5: Selling Only Oil, Ignoring Oil Cake (பிண்ணாக்கை விற்காமல் விடுவது)</strong> — Oil cake is 20–25% of your total revenue. Don't throw it away — build buyer relationships with dairy/poultry farms from Day 1.</div>
+  </div>
+  <div class="info-box danger">
+    <span class="icon">❌</span>
+    <div class="text"><strong>Mistake 6: No Branding (பிராண்ட் இல்லாமல் விற்பது)</strong> — Generic oil in plain cans gets the lowest price. Branded oil can sell for 30–50% more. Invest ₹5,000–10,000 in good branding — it returns 10x.</div>
+  </div>
+  <div class="info-box danger">
+    <span class="icon">❌</span>
+    <div class="text"><strong>Mistake 7: Overproducing Before Finding Buyers (வாங்குவோர் இல்லாமல் உற்பத்தி)</strong> — Don't produce 1,000 litres before you have buyers for 500. Start small, confirm buyers, then scale up.</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 14 – PRO TIPS -->
+<!-- ══════════════════════════════════════════════ -->
+<section id="tips">
+  <div class="sec-header">
+    <div class="sec-num">14</div>
+    <div class="sec-title">
+      <h2>Advanced Pro Tips for Growth</h2>
+      <div class="tamil">வளர்ச்சிக்கான உயர்நிலை ஆலோசனைகள்</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title"><span class="icon">🥇</span> Go Premium: Cold-Pressed / Chekku Oil</div>
+      <span class="tamil-label">குளிர் அழுத்த / சேக்கு எண்ணெய்</span>
+      <p style="font-size:0.88rem;">Cold-pressed (செக்கு முறை) oil sells at 2–3x regular price. Health-conscious urban consumers pay ₹400–700/litre for cold-pressed sesame or coconut oil. Add a Chekku (traditional wooden press) machine for ₹1.5–3L and open a premium product line!</p>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">🤝</span> Direct Farmer Contracts</div>
+      <span class="tamil-label">நேரடி விவசாயி ஒப்பந்தம்</span>
+      <p style="font-size:0.88rem;">Sign annual contracts with 5–10 farmers to buy their entire seed crop. Benefits: Lower prices (10–15% savings), guaranteed supply, freshness, and farmers love the certainty too. Win-win partnership!</p>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">📦</span> Private Label for Supermarkets</div>
+      <span class="tamil-label">சூப்பர் மார்கெட் பிரத்யேக பிராண்ட்</span>
+      <p style="font-size:0.88rem;">Approach local supermarket chains to sell YOUR oil under THEIR brand label. They handle marketing; you get guaranteed bulk orders. Called "Private Label Manufacturing." Start with 100L/week commitments and grow from there.</p>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">🌱</span> Organic Certification</div>
+      <span class="tamil-label">இயற்கை சான்றிதழ்</span>
+      <p style="font-size:0.88rem;">Get organic certification (NPOP or PGS-India) for your oil if you source from organic farmers. Organic certified oil sells 50–100% higher. Certification takes 6–18 months. Start the process early — plant the seed (pun intended)!</p>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">🏪</span> Open a "Chekku Shop"</div>
+      <span class="tamil-label">சேக்கு கடை திறக்கவும்</span>
+      <p style="font-size:0.88rem;">A storefront where customers bring their own seeds and you press the oil fresh in front of them. Highly popular in Tamil Nadu. You charge ₹50–100/kg for pressing service. Near-zero raw material cost for this model!</p>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">🧴</span> Diversify Products</div>
+      <span class="tamil-label">தயாரிப்புகளை பல்வகைப்படுத்துதல்</span>
+      <p style="font-size:0.88rem;">Using the same machines, add: <br>• Hair oil (hair care products with added herbs)<br>• Massage oil (ayurvedic blends)<br>• Pickle oil (special grades)<br>• Animal feed products (processed oil cake)<br>More products = more revenue, same fixed cost!</p>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <h3>📊 Startup Roadmap at a Glance</h3>
+    <p>Month 1–2: Research + Legal | Month 3: Setup | Month 4: Trial | Month 5: Marketing | Month 6: Launch | Year 2: Scale | Year 3: Brand | Year 5: Franchise or Export</p>
+  </div>
+
+  <div class="roadmap-grid">
+    <div class="roadmap-card">
+      <div class="phase">Phase 1 — 0 to 6 Months</div>
+      <h4>🌱 Seed Stage</h4>
+      <ul>
+        <li>Register business</li>
+        <li>Get licenses</li>
+        <li>Install machinery</li>
+        <li>First 50 customers</li>
+        <li>Achieve 50% capacity</li>
+      </ul>
+    </div>
+    <div class="roadmap-card">
+      <div class="phase">Phase 2 — Year 1 to 2</div>
+      <h4>🌿 Growth Stage</h4>
+      <ul>
+        <li>Reach 60% capacity</li>
+        <li>Launch online channel</li>
+        <li>Add 2nd oil variety</li>
+        <li>Build hotel client base</li>
+        <li>Repay loan regularly</li>
+      </ul>
+    </div>
+    <div class="roadmap-card">
+      <div class="phase">Phase 3 — Year 2 to 3</div>
+      <h4>🌳 Brand Stage</h4>
+      <ul>
+        <li>Launch cold-pressed line</li>
+        <li>Agmark/Organic cert.</li>
+        <li>Enter supermarket chain</li>
+        <li>Social media presence</li>
+        <li>Hire sales team</li>
+      </ul>
+    </div>
+    <div class="roadmap-card">
+      <div class="phase">Phase 4 — Year 3 to 5</div>
+      <h4>🏆 Scale Stage</h4>
+      <ul>
+        <li>Export opportunities</li>
+        <li>Second production unit</li>
+        <li>Franchise model</li>
+        <li>Private label contracts</li>
+        <li>₹1 Cr+ annual revenue</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CALL TO ACTION -->
+<section style="border-bottom:none;">
+  <div class="highlight-box" style="padding:48px;">
+    <h3>🚀 Your Final Action Plan</h3>
+    <p style="margin-bottom:16px;">Here are your first 7 actions to take THIS WEEK:</p>
+    <div style="text-align:left;max-width:600px;margin:0 auto;">
+      <p style="color:rgba(255,255,255,0.85);font-size:0.9rem;margin-bottom:8px;">1. ✅ Visit 2 existing oil mills this week — observe and learn</p>
+      <p style="color:rgba(255,255,255,0.85);font-size:0.9rem;margin-bottom:8px;">2. ✅ Register on udyamregistration.gov.in (FREE — takes 10 min)</p>
+      <p style="color:rgba(255,255,255,0.85);font-size:0.9rem;margin-bottom:8px;">3. ✅ Apply for FSSAI basic registration at fssai.gov.in</p>
+      <p style="color:rgba(255,255,255,0.85);font-size:0.9rem;margin-bottom:8px;">4. ✅ Visit your District Industries Centre (DIC) for PMFME subsidy info</p>
+      <p style="color:rgba(255,255,255,0.85);font-size:0.9rem;margin-bottom:8px;">5. ✅ Call 3 machinery suppliers for quotes (search "oil expeller Rajkot")</p>
+      <p style="color:rgba(255,255,255,0.85);font-size:0.9rem;margin-bottom:8px;">6. ✅ Talk to 5 local farmers about seed prices and supply</p>
+      <p style="color:rgba(255,255,255,0.85);font-size:0.9rem;">7. ✅ Open a business current account at your nearest bank</p>
+    </div>
+  </div>
+</section>
+
+</div><!-- end container -->
+
+<footer>
+  <p>📚 Based on the NIFTEM-Thanjavur DPR for Edible Oil Processing under the <strong>PM Formalisation of Micro Food Processing Enterprises (PMFME) Scheme</strong></p>
+  <p style="margin-top:12px;font-size:0.75rem;opacity:0.5;">This guide is educational. Actual figures may vary by location, oil type, and market conditions. Consult a business advisor for personalized DPR.</p>
+</footer>
+
+</body>
 </html>
